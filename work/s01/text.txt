@@ -1,0 +1,11 @@
+I knew about Git and GitHub, worked with here at university but i am still only got basic skills
+Markdown and GitHub pages i havent heard off, still need to read more abour Markdown.
+I have never created a website before but always had it in mind and wanted to learn.
+So i am excited for the course.
+ I have no knowledge from before this course just some subject around it by reading.
+ Today i learned!
+ Refreshed my knowledge in github terminal, i have mostly been using the GUI version before.
+ Learned a bit how to work with Atom
+ To keep my forked repo up-to-date with the original
+ Setup website using GitHub pages
+ Writing some HTML stuff, Markdown?
