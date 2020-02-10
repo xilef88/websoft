@@ -1,9 +1,7 @@
-/*!
- * Made by dbwebb-staff, staff@dbwebb.se
- */
+
 
 body {
-    color: green;
+    color: black;
 }
 
 h1 {
@@ -11,7 +9,7 @@ h1 {
 }
 
 h3 {
-    color: green;
+    color: black;
 }
 
 #content {
@@ -28,26 +26,82 @@ h3 {
     position: relative;
     width: 300px;
     height: 200px;
+
+
+}
+.fade{
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 500s linear 500ms, opacity 500ms;
+
 }
 
-.elfenbenskusten {
-    background-color: #fff;
+
+.sweden {
+    background-color: #230bea;
 }
 
-.elfenbenskusten .part1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 200px;
-    background-color: #f77f00;
+.sweden .part1 {
+  position: ABSOLUTE;
+  top: 80px;
+  left: 0;
+  width: 300px;
+  height: 30px;
+  align-self: center;
+  background-color: #f3f700;
 }
 
-.elfenbenskusten .part2 {
-    position: absolute;
-    top: 0;
-    left: 200px;
-    width: 100px;
-    height: 200px;
-    background-color: #009e60;
+.sweden .part2 {
+  position: absolute;
+top: 0;
+left: 100px;
+width: 30px;
+height: 200px;
+background-color: #f3f700;
+}
+
+.finland {
+    background-color: #FFFFFF;
+}
+
+.finland .part1 {
+  position: ABSOLUTE;
+  top: 80px;
+  left: 0;
+  width: 300px;
+  height: 30px;
+  align-self: center;
+  background-color: #07125B;
+}
+
+.finland .part2 {
+  position: absolute;
+top: 0;
+left: 100px;
+width: 30px;
+height: 200px;
+background-color: #07125B;
+}
+.denmark {
+    background-color: #F91911;
+}
+
+.denmark .part1 {
+  position: ABSOLUTE;
+  top: 80px;
+  left: 0;
+  width: 300px;
+  height: 30px;
+  align-self: center;
+  background-color: #FFFFFF;
+}
+
+.denmark .part2 {
+  position: absolute;
+top: 0;
+left: 100px;
+width: 30px;
+height: 200px;
+background-color: #FFFFFF;
 }

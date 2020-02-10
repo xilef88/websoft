@@ -6,32 +6,59 @@
 
      area.appendChild(duck);
  */
- "use strict";
+"use strict";
+(function() {
+  var element = document.getElementById("duck");
+  var hidden = false;
+  var elem = document.getElementById("duck").onclick = myMove;
 
-(function () {
-var element = document.getElementById("duck");
-var hidden = false;
 
 
-element.addEventListener("click", function() {
-  element.style.left = element.offsetLeft + 70 + "px";
-  console.log(element.style.left);
-  console.log(element.offsetLeft);
-  console.log("Duck clicked");
-});
-setInterval(function(){
-    document.getElementById("duck").style.visibility= hidden ? "visible" : "hidden";
+
+
+  setInterval(function() {
+    document.getElementById("duck").style.visibility = hidden ? "visible" : "hidden";
     hidden = !hidden;
-},2500);
-// Attach som event to part of your page Hides/shows duck
+  }, 3500);
+  // Attach som event to part of your page Hides/shows duck
 
-//element.addEventListener("mouseover", function() {
+  //element.addEventListener("mouseover", function() {
   //element.style.left = element.offsetleft + 20 + "px";
 
-    console.log(element);
-    console.log("Duck ready.");
+  console.log(element);
+  console.log("Duck ready.");
 
 }());
+
+function myMove() {
+  var elem = document.getElementById("duck");
+
+  var pos = 0;
+  var id = setInterval(frame, 5);
+
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + "px";
+      elem.style.left = pos + "px";
+    }
+  }
+}
+
+function myMove2() {
+
+  var duck = document.getElementById('duck');
+
+  if (duck.style.visibility === 'hidden') {
+    duck.style.visibility = 'visible';
+  } else {
+    duck.style.visibility = 'hidden';
+
+  }
+}
+
 
 //DIV CLASS PART 1-2-3 FOR COLOR THE FLAG
 // kolla exempel

@@ -1,46 +1,157 @@
+html {
+  overflow-y: scroll;
+}
 
 body {
-    margin: 8px auto;
-    background: #fff;
-    background-color: #5f5f5f;
+  margin: 8px auto;
+  background: #fff;
+  background-color: #5f5f5f;
+  width: 800px;
+  padding: 6px;
 
-
-    width: 700px;
+  border: 2px solid white;
 }
+#roundimage {
+  border-radius: 15px;
+
+  width: 300px
+  height: 250px;
+}
+
 .duck {
-width: 128px;
-height: 128px;
-border: 1px solid black;
-background-image: url(../img/duck.png);
-background-size: 128px;
-position: absolute;
+  width: 128px;
+  height: 120px;
+  background-image: url(../img/duck.png);
+  background-size: 128px;
+  position: absolute;
+
 }
 
 .site-header {
-width: 100%;
-background-color: black;
+  width: 100%;
+  background-color: black;
 }
+
 nav {
   text-align: center;
 }
-nav a{
-  font-size: 26px;
-  padding: 8px;
-  margin: 8px;
-  border: 4px dotted white;
-  display: inline-grid;
-}
 
+nav a {
+  font-size: 24px;
+  padding: 6px;
+  margin: 11px;
+  border: 2px solid gold;
+  display: inline-grid;
+  font-style: oblique;
+  color: black;
+
+}
+nav a:hover{
+  color: gold;
+  font-style: italic;
+
+  font-size: 26px;
+}
+nav a:active{
+color: purple;
+font-size: 48px;
+  }
 
 .main {
-background-color: #5f5f5f;
+  background-color: #5f5f5f;
 }
 
-article{
+article {
   background-color: #grey
 }
 
-.site-footer {
-  width: 100%;
-  background-color: #333
+.footer {
+  padding: 1px;
+   text-align: center;
+   background: #028aa2;
+   color: white;
+   font-size: 30px;
+}
+.flag {
+    position: relative;
+    width: 300px;
+    height: 200px;
+
+
+}
+.fade{
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 500s linear 500ms, opacity 500ms;
+
+}
+
+
+.sweden {
+    background-color: #230bea;
+}
+
+.sweden .part1 {
+  position: ABSOLUTE;
+  top: 80px;
+  left: 0;
+  width: 300px;
+  height: 30px;
+  align-self: center;
+  background-color: #f3f700;
+}
+
+.sweden .part2 {
+  position: absolute;
+top: 0;
+left: 100px;
+width: 30px;
+height: 200px;
+background-color: #f3f700;
+}
+
+.finland {
+    background-color: #FFFFFF;
+}
+
+.finland .part1 {
+  position: ABSOLUTE;
+  top: 80px;
+  left: 0;
+  width: 300px;
+  height: 30px;
+  align-self: center;
+  background-color: #07125B;
+}
+
+.finland .part2 {
+  position: absolute;
+top: 0;
+left: 100px;
+width: 30px;
+height: 200px;
+background-color: #07125B;
+}
+.denmark {
+    background-color: #F91911;
+}
+
+.denmark .part1 {
+  position: ABSOLUTE;
+  top: 80px;
+  left: 0;
+  width: 300px;
+  height: 30px;
+  align-self: center;
+  background-color: #FFFFFF;
+}
+
+.denmark .part2 {
+  position: absolute;
+top: 0;
+left: 100px;
+width: 30px;
+height: 200px;
+background-color: #FFFFFF;
 }
