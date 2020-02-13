@@ -1,11 +1,5 @@
-/**
- *
- var area = document.body,
-     areaHeight = window.innerHeight,
-     areaWidth = window.innerWidth;
 
-     area.appendChild(duck);
- */
+
 "use strict";
 (function() {
   var element = document.getElementById("duck");
