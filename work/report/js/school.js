@@ -1,34 +1,52 @@
-(function () {
-    'use strict';
+    function createFetch() {
+      'use strict';
 
-    //var myContent = document.getElementById('content');
-    // var flagTarget = document.getElementById('flag');
-    // var flagLink = document.getElementById('draw-elfenbenskusten');
+        fetch("data/1290.json")
+        //fetch('https://api.scb.se/UF0109/v2/skolenhetsregister/sv/kommun/1290')
+           .then((response) => {
+          return response.json();
+         })
+         .then((myJson) => {
+           console.log(myJson);
+           let fetchSchool = myJson.Skolenheter
 
-    //myContent.innerHTML = '<h3>This is a MEGA template!</h3>';
 
-    // function drawFlagElfenbenskusten()  {
-    //     var flagElfenbenskusten = '<div class="flag elfenbenskusten"><div class="part1"></div>' +
-    //     '<div class="part2"></div></div>';
-    //
-    //     console.log("Drawing flag");
-    //     flagTarget.innerHTML = flagElfenbenskusten;
-    // }
-    //
-    //
-    // flagLink.addEventListener("click", function () {
-    //     console.log("Event for clicking link elfenbenskusten.");
-    //     drawFlagElfenbenskusten();
-    // });
+               //Values for HTML-header
+               var col = [];
+               for (var i = 0; i < fetchSchool.length; i++) {
+                   for (var key in fetchSchool[i]) {
+                       if (col.indexOf(key) === -1) {
+                           col.push(key);
+                       }
+                   }
+               }
 
-//    fetch('https://api.scb.se/UF0109/v2/skolenhetsregister/sv/kommun/1081')
-    fetch('data/1081.json')
-        .then((response) => {
-            return response.json();
-        })
-        .then((myJson) => {
-            console.log(myJson);
-        });
+               //Creates a dynamic table
+               var table = document.createElement("table");
 
-    console.log('Sandbox MEGA is ready!');
-})();
+               //Creates HTML-table header row
+               var tr = table.insertRow(-1);                   // Table row
+
+               for (var i = 0; i < col.length; i++) {
+                   var th = document.createElement("th");      // Table header
+                   th.innerHTML = col[i];
+                   tr.appendChild(th);
+               }
+
+               //Adds json to the rows
+               for (var i = 0; i < fetchSchool.length; i++) {
+
+                   tr = table.insertRow(-1);
+
+                   for (var j = 0; j < col.length; j++) {
+                       var tabCell = tr.insertCell(-1);
+                       tabCell.innerHTML = fetchSchool[i][col[j]];
+                   }
+               }
+
+               // Adds created table with json-data to a container
+               var divContainer = document.getElementById("showData");
+               divContainer.innerHTML = "";
+               divContainer.appendChild(table);
+           });
+       }
