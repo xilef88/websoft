@@ -11,7 +11,6 @@ const middleware = require("./middleware/index.js");
 const path = require("path");
 const routeToday = require("./route/today.js");
 
-const routeLotto = require("./route/lotto.js");
 
 
 app.set("view engine", "ejs");
@@ -22,7 +21,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", routeIndex);
 app.use("/today", routeToday);
 
-app.use("/lotto", routeLotto);
 
 app.listen(port, logStartUpDetailsToConsole);
 
