@@ -10,5 +10,6 @@ DROP TABLE IF EXISTS tech;
 CREATE TABLE tech (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     label CHAR(10),
-    type VARCHAR(20)
+    type VARCHAR(20),
+    
 );
