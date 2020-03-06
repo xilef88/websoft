@@ -70,8 +70,8 @@ namespace console
                 return false;
                 default:
                     Console.WriteLine("Please enter a proper number");
-                    break;
 
+                return true;
             }
 
 
@@ -81,7 +81,7 @@ namespace console
 
         static IEnumerable<Account> ReadAccounts()
         {
-            String file = "work/data/bank.json";
+            String file = "../../data/account.json";
 
             using (StreamReader r = new StreamReader(file))
             {
