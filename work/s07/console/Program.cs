@@ -17,15 +17,11 @@ namespace console
                     boolean = menu();
 
             }
-
-        
             
         }
         private static bool menu()
         {
             var accounts = ReadAccounts();    
-
-            
             Console.WriteLine("------Options------");
             Console.WriteLine("1) View Accounts");
             Console.WriteLine("2) View Account By Number");
@@ -52,8 +48,7 @@ namespace console
                 Console.WriteLine("Search number:");
                 var search = Console.ReadLine();
 
-                foreach (var account in accounts) {
-                        
+                foreach (var account in accounts) {      
                     if ( account.Number == Int32.Parse(search) ){
                         Console.WriteLine("+--------+---------+-----------+-------+");
                         Console.WriteLine("| Number | Balance |   Label   | Owner |");
@@ -94,13 +89,10 @@ namespace console
                         PropertyNameCaseInsensitive = true
                     }
                 );
-
                 //Console.WriteLine(json[0]);
                 return json;
             }
         }
-
-
 
         public class Account
     {
@@ -113,9 +105,6 @@ namespace console
             return JsonSerializer.Serialize<Account>(this);
         }
     }
-
-
-
 
     }
 }

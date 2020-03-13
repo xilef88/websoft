@@ -19,7 +19,7 @@ namespace webapp.Services
 
         private string JsonFileName
         {
-            get { return Path.Combine(WebHostEnvironment.ContentRootPath, "..", "data", "account.json"); }
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "account.json"); }
         }
 
         public IEnumerable<Account> GetAccounts()

@@ -1,25 +1,53 @@
+
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using webapp.Models;
 using webapp.Services;
 
-namespace webapp.Controllers
+
+namespace Webapp.Controller
 {
+    [Route("api/accounts")]
     [ApiController]
-    [Route("api/[controller]")]
-    public class AccountsController : ControllerBase
+    public class AccountController : ControllerBase
     {
-        public AccountsController(JsonFileAccountService accountService)
+
+        public AccountController(JsonFileAccountService JsonFileAccountService)
         {
-            AccountService = accountService;
+            this.JsonFileAccountServices = JsonFileAccountService;
         }
 
-        public JsonFileAccountService AccountService { get; }
+        public JsonFileAccountService JsonFileAccountServices { get; }
 
         [HttpGet]
         public IEnumerable<Account> Get()
         {
-            return AccountService.GetAccounts();
+            return JsonFileAccountServices.GetAccounts();
+        }
+
+
+        [HttpGet("{number}")]
+        public ActionResult<Account> GetByNumber(int number)
+        {
+            Account result = null;
+            foreach (var account in Get())
+            {
+                if (account.Number == number)
+                {
+                    result = account;
+                }
+            }
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return result;
+
         }
     }
 }
